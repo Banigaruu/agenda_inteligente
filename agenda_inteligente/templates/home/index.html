@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda Personal Inteligente 💖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffe6f2, #ffd1ec);
+            color: #5a3a4e;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(to right, #ff7eb9, #c86bfa);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(214, 112, 173, 0.25);
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #d44d8c;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: #ffe6f2;
+            padding: 20px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(214, 112, 173, 0.2);
+        }
+
+        .feature-card i {
+            font-size: 2rem;
+            color: #c86bfa;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+        }
+
+        .api-links a {
+            display: block;
+            padding: 12px 18px;
+            margin-bottom: 10px;
+            border-radius: 14px;
+            background: linear-gradient(to right, #ff7eb9, #c86bfa);
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.2s ease;
+        }
+
+        .api-links a:hover {
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #8b4b6b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Agenda Personal Inteligente 💋</h1>
+    <p class="subtitle">Gestión de eventos con etiquetas, filtros y recordatorios</p>
+</header>
+
+<div class="container">
+
+    <div class="section">
+        <h2><i class="fas fa-heart"></i> Descripción</h2>
+        <p>
+            API desarrollada en Django REST Framework para la administración de eventos personales.
+            Permite organizar actividades mediante etiquetas, gestionar recordatorios y evitar
+            eventos solapados por usuario.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2><i class="fas fa-star"></i> Funcionalidades</h2>
+
+        <div class="features">
+            <div class="feature-card">
+                <i class="fas fa-calendar-check"></i>
+                <p>Creación y gestión de eventos personales</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-tags"></i>
+                <p>Asignación de etiquetas a cada evento</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-filter"></i>
+                <p>Filtros por fecha, etiqueta y estado</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-bell"></i>
+                <p>Recordatorios asociados a eventos</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><i class="fas fa-plug"></i> Endpoints API</h2>
+
+        <div class="api-links">
+            <a href="/api/eventos/">/api/eventos/</a>
+            <a href="/api/etiquetas/">/api/etiquetas/</a>
+            <a href="/api/recordatorios/">/api/recordatorios/</a>
+            <a href="/api-auth/login/">/api-auth/login/</a>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    Agenda Personal Inteligente 💖 · Django REST Framework · Evaluación
+</footer>
+
+</body>
+</html>

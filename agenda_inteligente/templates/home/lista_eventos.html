@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+Agenda Personal Inteligente
+{% endblock %}
+
+{% block titulo_encabezado %}
+Listado de Eventos
+{% endblock %}
+
+{% block contenido %}
+
+<section class="contenedor">
+
+    <h2>Filtrar eventos</h2>
+
+    <form method="get">
+        <div class="filtros">
+            {{ filter.form.as_p }}
+        </div>
+
+        <button type="submit">
+            Aplicar filtros
+        </button>
+    </form>
+
+    <hr>
+
+    <h2>Eventos</h2>
+
+    {% if filter.qs %}
+        <ul class="lista-eventos">
+            {% for evento in filter.qs %}
+                <li class="evento">
+                    <h3>{{ evento.titulo }}</h3>
+
+                    <p>{{ evento.descripcion }}</p>
+
+                    <p>
+                        <strong>Inicio:</strong> {{ evento.fecha_inicio }} <br>
+                        <strong>Fin:</strong> {{ evento.fecha_fin }}
+                    </p>
+
+                    <p>
+                        <strong>Estado:</strong> {{ evento.get_estado_display }}
+                    </p>
+
+                    <p>
+                        <strong>Etiquetas:</strong>
+                        {% for etiqueta in evento.etiquetas.all %}
+                            <span class="etiqueta">
+                                {{ etiqueta.nombre }}
+                            </span>
+                        {% empty %}
+                            Sin etiquetas
+                        {% endfor %}
+                    </p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay eventos registrados.</p>
+    {% endif %}
+
+</section>
+
+{% endblock %}

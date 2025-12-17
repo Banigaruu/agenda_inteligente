@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titulo %}Agenda Personal Inteligente{% endblock %}</title>
+
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #fdf6fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #f3c6dd;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #e5a9c9;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #5a2a4a;
+            font-weight: 600;
+        }
+
+        nav {
+            background-color: #fff;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #b04a7a;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .contenedor {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: #8a3f6a;
+            margin-top: 0;
+        }
+
+        button {
+            background-color: #d97ca6;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #c56792;
+        }
+
+        .lista-eventos {
+            list-style: none;
+            padding: 0;
+        }
+
+        .evento {
+            border: 1px solid #f0d6e5;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #fff7fb;
+        }
+
+        .evento h3 {
+            margin-top: 0;
+            color: #6b2f52;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            background-color: #f1b7d2;
+            color: #5a2a4a;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-right: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #f3c6dd;
+            color: #5a2a4a;
+            margin-top: 40px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>{% block titulo_encabezado %}Agenda Personal Inteligente{% endblock %}</h1>
+</header>
+
+<nav>
+    <a href="/">Inicio</a>
+    <a href="/api/">API</a>
+    <a href="/api/eventos/">Eventos</a>
+</nav>
+
+<main>
+    {% block contenido %}
+    <p>Contenido por defecto.</p>
+    {% endblock %}
+</main>
+
+<footer>
+    Agenda Personal Inteligente · Django REST Framework
+</footer>
+
+</body>
+</html>

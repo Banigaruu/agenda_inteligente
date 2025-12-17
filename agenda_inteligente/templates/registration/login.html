@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda Inteligente | Iniciar sesión</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #ffe6f2, #f4d6ee);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #4a2c3a;
+    }
+
+    .login-container {
+        background: #ffffff;
+        width: 100%;
+        max-width: 420px;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 20px 45px rgba(214, 112, 173, 0.35);
+    }
+
+    .login-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .login-header h1 {
+        font-size: 1.9rem;
+        font-weight: 600;
+        color: #c04a86;
+        margin-bottom: 6px;
+    }
+
+    .login-header p {
+        font-size: 0.95rem;
+        color: #7a4a63;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    label {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #6b3b55;
+        margin-bottom: 4px;
+    }
+
+    input {
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid #e3b1cb;
+        font-size: 0.95rem;
+        outline: none;
+        transition: border 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus {
+        border-color: #c04a86;
+        box-shadow: 0 0 0 3px rgba(192, 74, 134, 0.15);
+    }
+
+    button {
+        margin-top: 12px;
+        padding: 13px;
+        border-radius: 14px;
+        border: none;
+        background: linear-gradient(to right, #ff7eb9, #c86bfa);
+        color: white;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 25px rgba(200, 107, 250, 0.35);
+    }
+
+    .errorlist {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 10px 0;
+        color: #b03060;
+        font-size: 0.85rem;
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 25px;
+        font-size: 0.8rem;
+        color: #8b4b6b;
+    }
+</style>
+
+</head>
+
+<body>
+
+<div class="login-container">
+    <div class="login-header">
+        <h1>Agenda Inteligente</h1>
+        <p>Accede a tu panel de gestión personal</p>
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.non_field_errors }}
+
+        <div>
+            <label for="id_username">Usuario</label>
+            {{ form.username }}
+        </div>
+
+        <div>
+            <label for="id_password">Contraseña</label>
+            {{ form.password }}
+        </div>
+
+        <button type="submit">
+            Iniciar sesión
+        </button>
+    </form>
+
+    <footer>
+        Django · REST Framework · Proyecto académico
+    </footer>
+</div>
+
+</body>
+</html>
